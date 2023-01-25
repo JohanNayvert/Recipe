@@ -19,7 +19,7 @@ public class RecipeController {
 
     private final RecipeServiceImpl recipeService;
 
-    @PatchMapping
+    @PostMapping
     Recipe addRecipe (@Valid @RequestBody Recipe recipe){
         return recipeService.addRecipe(recipe);
     }
@@ -27,6 +27,16 @@ public class RecipeController {
     @GetMapping("/{recipeId}")
     Recipe getRecipe (@PathVariable Long recipeId){
         return recipeService.getRecipe(recipeId);
+    }
+
+    @PutMapping("/{recipeId}")
+    Recipe updateRecipe (@PathVariable Long recipeId, @Valid @RequestBody Recipe recipe ){
+        return recipeService.updateRecipe(recipeId, recipe);
+    }
+
+    @DeleteMapping("/{recipeId}")
+    Recipe deleteRecipe (@PathVariable Long recipeId){
+        return recipeService.deleteRecipe(recipeId);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -37,7 +47,7 @@ public class RecipeController {
         ex.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
-            errors.put(fieldName, errorMessage)
+            errors.put(fieldName, errorMessage);
         });
         return errors;
     }

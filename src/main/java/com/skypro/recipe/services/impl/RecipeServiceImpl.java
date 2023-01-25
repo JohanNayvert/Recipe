@@ -21,6 +21,17 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Recipe getRecipe(Long recipeId) {
+
         return recipeMap.get(recipeId);
+    }
+
+    @Override
+    public Recipe updateRecipe(Long recipeId, Recipe recipe) {
+        return recipeMap.put(recipeId, recipe);
+    }
+
+    @Override
+    public Recipe deleteRecipe(Long recipeId) {
+        return recipeMap.remove(recipeId);
     }
 }

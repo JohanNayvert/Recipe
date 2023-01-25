@@ -30,6 +30,16 @@ public class IngredientsController {
         return ingredientsService.getIngredients(ingredientsId);
     }
 
+    @PutMapping("/{ingredientsId}")
+    Ingredients updateIngredients (@PathVariable Long ingredientsId, @Valid @RequestBody Ingredients ingredients ){
+        return ingredientsService.updateIngredients(ingredientsId, ingredients);
+    }
+
+    @DeleteMapping("/{ingredientsId}")
+    Ingredients deleteIngredients (@PathVariable Long ingredientsId){
+        return ingredientsService.deleteIngredients(ingredientsId);
+    }
+
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleValidationExceptions(
