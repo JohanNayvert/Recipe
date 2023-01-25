@@ -1,4 +1,4 @@
-Project Name: Recipe
+Project Name: Recipe part2
 Functions: Rest
 UseTech: JDK 19, Maven, SpringBoot, SpringWEB
 Language: java
