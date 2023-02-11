@@ -24,4 +24,14 @@ public class IngredientsServiceImpl implements IngredientsService {
     public Ingredients getIngredients(Long ingredientsId) {
         return ingredientsMap.get(ingredientsId);
     }
+
+    @Override
+    public Ingredients updateIngredients(Long ingredientsId, Ingredients ingredients) {
+        return ingredientsMap.put(ingredientsId, ingredients);
+    }
+
+    @Override
+    public Ingredients deleteIngredients(Long ingredientsId) {
+        return ingredientsMap.remove(ingredientsId);
+    }
 }

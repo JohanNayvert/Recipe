@@ -6,7 +6,10 @@ public interface IngredientsService {
 
     public Ingredients addIngredients (Ingredients ingredients);
 
-    public Ingredients getIngredients(Long ingredientsId);
+    public Ingredients getIngredients (Long ingredientsId);
 
+    public Ingredients updateIngredients (Long ingredientsId, Ingredients ingredients);
+
+    public Ingredients deleteIngredients (Long ingredientsId);
 }
 
